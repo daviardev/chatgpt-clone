@@ -14,7 +14,7 @@ const Home = () => {
   const size = '400'
 
   const config = new Configuration({
-    apiKey: process.env.NEXT_PUBLIC_OPEN_AI_KEY
+    apiKey: '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
   })
 
   const openai = new OpenAIApi(config)

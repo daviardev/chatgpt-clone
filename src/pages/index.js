@@ -14,7 +14,7 @@ const Home = () => {
   const size = '400'
 
   const config = new Configuration({
-    apiKey: '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
+    apiKey: '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'
   })
 
   const openai = new OpenAIApi(config)

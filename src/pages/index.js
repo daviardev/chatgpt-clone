@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 
 import { useState } from 'react'
 
@@ -8,6 +9,9 @@ import styles from 'styles/Home.module.css'
 
 const Home = () => {
   const [prompt, setPrompt] = useState('')
+  const [image, setImage] = useState('')
+
+  const size = '400'
 
   const config = new Configuration({
     apiKey: process.env.NEXT_PUBLIC_OPEN_AI_KEY
@@ -22,7 +26,7 @@ const Home = () => {
       size: '1024x1024'
     })
 
-    console.log(res.data.data[0].url)
+    setImage(res.data.data[0].url)
   }
 
   return <>
@@ -35,8 +39,24 @@ const Home = () => {
 
     <div className={styles.app__main}>
       <h3>Genera una imagen usando Open AI Api</h3>
-      <input className={styles.app__input} onChange={e => setPrompt(e.target.value)} />
+      <input
+        className={styles.app__input}
+        placeholder='Escriba algo para generar una imagen...'
+        onChange={e => setPrompt(e.target.value)}
+      />
       <button onClick={generateImage}>Generar imagen</button>
+
+      {
+        image.length > 0 ?
+          <Image
+            src={image}
+            alt='Imagen generada'
+            width={size}
+            height={size}
+            className={styles.image}
+          />
+        : <></>
+      }
     </div>
   </>
 }

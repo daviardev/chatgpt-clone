@@ -4,12 +4,45 @@
   flex-direction: column;
 }
 
+.app__button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: 0;
+  background: #7f8ff4;
+  color: #fff;
+  margin-left: -87px;
+  padding: 12px 36px;
+  transition: all 200ms ease-in;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+  border-radius: 2px;
+}
+
+.app__button:hover {
+  background: #6c7de9;
+}
+
+.app__button:active {
+  background-color: #7f8ff4;
+  box-shadow: 0 0 .2px 2px;
+}
+
 .app__input {
-  width: 300px;
-  height: 20px;
-  margin: 20px;
+  font: inherit;
+  color: #a3a3a3;
+  width: 360px;
+  border: 0;
+  outline: 0;
+  font-size: 13px;
+  padding: 22px 18px;
+  background: #fff;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
 }
 
 .image {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
   margin-top: 20px;
+  border-radius: 5px;
 }

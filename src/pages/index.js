@@ -39,12 +39,19 @@ const Home = () => {
 
     <div className={styles.app__main}>
       <h3>Genera una imagen usando Open AI Api</h3>
-      <input
-        className={styles.app__input}
-        placeholder='Escriba algo para generar una imagen...'
-        onChange={e => setPrompt(e.target.value)}
-      />
-      <button onClick={generateImage}>Generar imagen</button>
+      <form>
+        <input
+          className={styles.app__input}
+          placeholder='Escriba algo para generar una imagen...'
+          onChange={e => setPrompt(e.target.value)}
+        />
+        <input
+        type='button'
+        value='Generar'
+        onClick={generateImage}
+        className={styles.app__button}
+        />
+      </form>
 
       {
         image.length > 0 ?

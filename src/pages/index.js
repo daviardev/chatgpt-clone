@@ -17,11 +17,11 @@ const Home = () => {
 
   const generateImage = async () => {
     const res = await openai.createImage({
-      prompt: 'Say this is a test',
+      prompt: prompt,
       n: 1,
       size: '1024x1024'
     })
-    
+
     console.log(res.data.data[0].url)
   }
 
@@ -32,7 +32,12 @@ const Home = () => {
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <link rel='icon' href='favicon.png' />
     </Head>
-    <button onClick={generateImage}>Generar imagen</button>
+
+    <div className={styles.app__main}>
+      <h3>Genera una imagen usando Open AI Api</h3>
+      <input className={styles.app__input} onChange={e => setPrompt(e.target.value)} />
+      <button onClick={generateImage}>Generar imagen</button>
+    </div>
   </>
 }
 
